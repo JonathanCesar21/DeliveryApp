@@ -15,9 +15,7 @@
     },
     "production": {}
   },
-  "expo": {
-    "android": {
-      "package": "com.jonathancesar21.anime"
-    }
+  "cli": {
+    "version": ">= 0.52.0"
   }
 }
