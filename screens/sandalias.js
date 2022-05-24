@@ -8,7 +8,7 @@ export default function Sandalias(){
   var obj = {  
     method: 'GET',
     headers: {
-      'authorization': '852459f825d3103e7212e35b729882a387b76c6e',
+      'authorization': 'b2a77a9ad299da2fe289fbddfcd720ccfe5e5f03',
       'Content-Type': 'application/json',
     },
   }

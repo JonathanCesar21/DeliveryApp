@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     imageProduto: {
-        width: 250,
+        width: 400,
         height: 300,
         resizeMode: "contain",
       },
@@ -22,6 +22,16 @@ const styles = StyleSheet.create({
         textAlign: "left",
         fontSize: 12,
         fontFamily: 'UbuntuLight'
+    },
+    tamanhos:{
+        flexDirection: "row",
+    },
+    circleTam:{
+        backgroundColor: '#636363',
+        borderRadius: 50,
+        margin: 5,
+        width: 45,
+        textAlign: "center",
     },
     imageCard: {
         width: 100,

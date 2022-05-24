@@ -7,7 +7,7 @@ export default function Banners(){
   var obj = {  
     method: 'GET',
     headers: {
-      'authorization': '02b88cc602e4a0f0d67cc03e014396f94a7fb8d6',
+      'authorization': 'b2a77a9ad299da2fe289fbddfcd720ccfe5e5f03',
       'Content-Type': 'application/json',
     },
   }
@@ -32,6 +32,8 @@ export default function Banners(){
     <View>
         <FlatList
         horizontal={true}
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
         data={banners}
         renderItem={BannersShow}
         />

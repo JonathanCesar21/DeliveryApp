@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   titleBox: {
+    marginBottom: 10,
     textAlign: "center",
     fontSize: 22,
     fontFamily: "UbuntuMedium",
