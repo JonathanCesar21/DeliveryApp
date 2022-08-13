@@ -1,14 +1,14 @@
 import { StyleSheet } from "react-native";
+import { Dimensions } from "react-native";
+
+var width = Dimensions.get('window').width; //full width
+var height = Dimensions.get('window').height; //full height
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    borderStyle: "solid",
-    borderWidth: 0.1,
-    borderColor: "#000",
-    borderRadius: 4,
     marginHorizontal: 3,
     marginBottom: 3,
   },
@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
     elevation: 5,
   },
   textName: {
@@ -43,6 +42,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     resizeMode: "contain",
+    alignSelf: "center",
   },
   titleBox: {
     marginBottom: 10,

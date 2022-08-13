@@ -1,4 +1,8 @@
 import { StyleSheet } from "react-native";
+import { Dimensions } from "react-native";
+
+var width = Dimensions.get('window').width; //full width
+var height = Dimensions.get('window').height; //full height
 
 const styles = StyleSheet.create({
     backgroundColor:{
@@ -9,9 +13,10 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     imageProduto: {
-        width: 400,
+        width: width,
         height: 300,
         resizeMode: "contain",
+        marginBottom: 10,
       },
     textName:{
         textAlign: "left",

@@ -1,16 +1,45 @@
 import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native'
 import React, {useState, useEffect} from 'react'
+import { Dimensions } from "react-native";
+
+var width = Dimensions.get('window').width; //full width
+var height = Dimensions.get('window').height; //full height
 
 export default function Banners(){
 
   const [banners, setDataBanners] = useState();
-  var obj = {  
-    method: 'GET',
+  const [apiData, setApiData] = useState([]);
+  const [auth, setDataAuth] = useState([]);
+  
+  var objAuth = {  
+    method: 'POST',
     headers: {
-      'authorization': 'b2a77a9ad299da2fe289fbddfcd720ccfe5e5f03',
+      'username': 'grupoaob_appmobil' ,
+      'password': '133d2542c40c187763beff077347c056583d3e46',
       'Content-Type': 'application/json',
     },
   }
+
+  useEffect( ()=> {
+
+    const fetchData = async () => {
+      const datas = await fetch('https://api.irroba.com.br/v1/getToken?username=grupoaob_appmobil&password=2VSjTZo81AiaKN48jYIK72Jicd0LVcvdOjBHN0I', objAuth)
+      const json = await datas.json();
+      setDataAuth(json.data);
+    }
+    fetchData();
+      }, [])
+       console.log(auth.authorization)
+
+var obj = {  
+  method: 'GET',
+  headers: {
+    'authorization': '' + auth.authorization,
+    'Content-Type': 'application/json',
+  },
+}
+
+const tokenAuth = auth.authorization
 
   useEffect(()=> {
   fetch('https://api.irroba.com.br/v1/banner', obj)
@@ -22,9 +51,10 @@ export default function Banners(){
         setDataBanners(banners.data);
       })
       .catch(() => {
-        Alert.alert('Erro', 'Não foi possível carregar os dados dos Animes');
+        Alert.alert('Erro', 'Não foi possível carregar os dados');
       })
-    }, [])
+
+    }, [tokenAuth])
 
   
 
@@ -76,7 +106,7 @@ titleText:{
     marginBottom: 5,
 },
 imageBanner:{
-    width: 390,
+    width: width - 20,
     height: 200,
     borderRadius: 10,
 },

@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 import styles from "../styles/cards";
 import Banners from "./banners";
 
-export default function SandaliasScreen() {
+export default function CoturnoScreen() {
   const navigation = useNavigation();
   const [produtos, setDataProdutos] = useState();
   const [auth, setDataAuth] = useState([]);
@@ -49,7 +49,7 @@ const tokenAuth = auth.authorization
 
 
   useEffect(() => {
-    fetch("https://api.irroba.com.br/v1/product/category/3", obj)
+    fetch("https://api.irroba.com.br/v1/product/category/9", obj)
       .then((resposta) => resposta.json())
       .then((data) => {
         const produtos = {
@@ -60,14 +60,14 @@ const tokenAuth = auth.authorization
         //console.log(produtos.data[0].product_description[0].name)
       })
       .catch(() => {
-        Alert.alert("Erro", "Não foi possível carregar os dados dos Produtos");
+        Alert.alert("Erro", "Não foi possível carregar os dados dos Animes");
       });
   }, [tokenAuth]);
 
   return (
     <View>
       <Banners  />
-      <Text style={styles.titleBox}>Sandálias</Text>
+      <Text style={styles.titleBox}>Coturnos</Text>
       <FlatList
         numColumns={2}
         horizontal={false}

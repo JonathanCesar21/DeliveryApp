@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 import styles from "../styles/cards";
 import Banners from "./banners";
 
-export default function SandaliasScreen() {
+export default function RasteirinhasScreen() {
   const navigation = useNavigation();
   const [produtos, setDataProdutos] = useState();
   const [auth, setDataAuth] = useState([]);
@@ -49,7 +49,7 @@ const tokenAuth = auth.authorization
 
 
   useEffect(() => {
-    fetch("https://api.irroba.com.br/v1/product/category/3", obj)
+    fetch("https://api.irroba.com.br/v1/product/category/8", obj)
       .then((resposta) => resposta.json())
       .then((data) => {
         const produtos = {
@@ -66,8 +66,8 @@ const tokenAuth = auth.authorization
 
   return (
     <View>
-      <Banners  />
-      <Text style={styles.titleBox}>Sandálias</Text>
+      <Banners/>
+      <Text style={styles.titleBox}>Rasteirinhas</Text>
       <FlatList
         numColumns={2}
         horizontal={false}

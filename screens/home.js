@@ -7,15 +7,17 @@ import {
   ScrollView,
 } from "react-native";
 import React from "react";
-import Lancamentos from "./lancamentos";
 import Banners from "./banners";
 import Sandalias from "./sandalias";
+import Categorias from "./categorias";
+import LancamentosScreen from "./lancamentos";
+
 
 function HomeScreen() {
   return (
     <View style={styles.backgroundColor}>
           <View>
-            <Lancamentos />
+            <Categorias/>
           </View>
     </View>
   );
